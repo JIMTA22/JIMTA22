@@ -8,49 +8,71 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 16px;
+    padding: 24px;
 }
 
 h1 {
     color: #fff;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin: 0;
+}
+
+.hud {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    color: #fff;
+    font-size: 18px;
 }
 
 #game {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-template-rows: repeat(3, 100px);
-    gap: 10px;
-    margin-top: 20px;
+    grid-template-columns: repeat(16, 22px);
+    grid-template-rows: repeat(16, 22px);
+    gap: 2px;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
 }
 
 .cell {
-    width: 100px;
-    height: 100px;
-    background-color: rgba(255,255,255,0.7);
-    border-radius: 10px;
-    font-size: 64px;
-    line-height: 100px;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 22px;
+    height: 22px;
+    background-color: rgba(255,255,255,0.5);
+    border-radius: 4px;
 }
 
-.cell:hover {
-    transform: scale(1.1);
-    background-color: rgba(255,255,255,1);
+.cell.snake {
+    background-color: #4caf50;
+}
+
+.cell.head {
+    background-color: #2e7d32;
+}
+
+.cell.food {
+    background-color: #ff7043;
 }
 
 #status {
-    margin-top: 20px;
-    font-size: 24px;
+    font-size: 16px;
     color: #fff;
 }
 
+.controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 button {
-    margin-top: 20px;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 16px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     background-color: #4CAF50;
     color: white;
     cursor: pointer;
@@ -59,4 +81,26 @@ button {
 
 button:hover {
     background-color: #45a049;
+}
+
+.dpad {
+    display: grid;
+    gap: 6px;
+    align-items: center;
+    justify-items: center;
+}
+
+.dpad-row {
+    display: flex;
+    gap: 6px;
+}
+
+.dpad-btn {
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border-radius: 8px;
+    background-color: rgba(255,255,255,0.85);
+    color: #333;
+    font-size: 18px;
 }

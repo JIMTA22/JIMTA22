@@ -3,14 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3 en Raya Colorido</title>
+    <title>Snake Clásico</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>3 en Raya</h1>
-    <div id="game"></div>
-    <div id="status"></div>
-    <button id="restart">Reiniciar</button>
+    <h1>Snake Clásico</h1>
+    <div class="hud">
+        <div class="score">Puntos: <span id="score">0</span></div>
+        <div id="status">Presiona una tecla para empezar</div>
+    </div>
+    <div id="game" aria-label="Tablero de Snake" role="grid"></div>
+    <div class="controls">
+        <button id="restart">Reiniciar</button>
+        <button id="pause">Pausar</button>
+    </div>
+    <div class="dpad" aria-label="Controles táctiles">
+        <button class="dpad-btn" data-dir="up">▲</button>
+        <div class="dpad-row">
+            <button class="dpad-btn" data-dir="left">◀</button>
+            <button class="dpad-btn" data-dir="down">▼</button>
+            <button class="dpad-btn" data-dir="right">▶</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>
